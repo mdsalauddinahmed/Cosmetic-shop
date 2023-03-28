@@ -40,8 +40,13 @@ const removeDb =id=>{
 const removeShoppingCart=()=>{
     localStorage.removeItem('shopping-Cart')
 }
+const getTotalPrice =(product)=>{
+    const reducer =(pre,current)=>pre+current.price;
+    const total = product.reduce(reducer,0)
+    return total;
+}
  
 export {
     addToDb,
-    removeDb,
+    removeDb,getTotalPrice,
 removeShoppingCart};
